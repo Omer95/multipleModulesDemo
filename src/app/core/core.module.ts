@@ -3,11 +3,15 @@ import { CommonModule } from '@angular/common';
 import { CoreRoutingModule } from './core-routing.module';
 import { CoreComponent } from './core.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   exports: [
     RouterModule
