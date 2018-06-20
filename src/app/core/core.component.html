@@ -3,33 +3,12 @@
     <h1>Lazy Loading/Reactive Forms Demo</h1>
   </div>
   <div class="panel panel-primary">
-    <div class="panel-heading">Login</div>
     <div class="panel-body">
-      <form [formGroup]='loginForm' (ngSubmit)="login()">
-        <fieldset>
-          <legend>Enter Credentials</legend>
-
-          <div class="form-group">
-            <label for="inputEmail"></label>
-            <input type="text" class="form-control" id="inputEmail" formControlName="email" placeholder="Email" [ngClass]="{'dangerClass': denied}">
-            <div *ngIf="email.invalid && email.touched" class="col-sm-3 text-danger">
-              Email is invalid
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="inputPassword"></label>
-            <input type="password" class="form-control" id="inputPassword" formControlName="password" placeholder="Password" [ngClass]="{'dangerClass': denied}">
-            <div *ngIf="password.invalid && password.touched" class="col-sm-3 text-danger">
-              Password needs to be more than 5 characters
-            </div>
-          </div>
-
-          <div class="form-group">
-            <button type="submit" [disabled]="!loginForm.valid" class="form-control btn btn-danger">Submit</button>
-          </div>
-        </fieldset>
-      </form>
+      Login as:
+      <button type="button" class="btn btn-primary" (click)="prevId='omer@omer.com'">
+        Omer Farooq Ahmed
+      </button>
     </div>
   </div>
+  <app-form [id]="prevId"></app-form>
 </div>

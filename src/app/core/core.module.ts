@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule
   ],
   declarations: [
-    CoreComponent
+    CoreComponent,
+    FormComponent
   ]
 })
 export class CoreModule { }
