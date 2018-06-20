@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
+
 
 @Component({
   selector: 'app-core',
@@ -9,16 +11,22 @@ import { Router } from '@angular/router';
 })
 export class CoreComponent implements OnInit {
   @Input() id: string;
-  @Input() password: string;
+  @Input() pass: string;
   denied: string
   inputColor: string 
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private fb: FormBuilder) { }
 
+  loginForm: FormGroup;
   login() {
-    if (this.id && this.password) {
-      this.authService.login(this.id, this.password).subscribe(res=> {
-        console.log(this.id+" "+this.password)
+    if (this.loginForm.valid) {
+      this.id=this.loginForm.get('email').value;
+      this.pass=this.loginForm.get('password').value;
+      console.log(this.id+' '+this.pass)
+    }
+    if (this.id && this.pass) {
+      this.authService.login(this.id, this.pass).subscribe(res=> {
+        //console.log(this.id+" "+this.pass)
         if (!this.authService.isLoggedIn()) {
           this.denied='true';
           console.log('incorrect ID/Password')
@@ -32,12 +40,20 @@ export class CoreComponent implements OnInit {
   }
 
   randGet() {
-    if (this.id && this.password) {
+    if (this.id && this.pass) {
       this.authService.randGet();
     }
   }
   
   ngOnInit() {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(5)]]
+    })
   }
+
+  get email() { return this.loginForm.get('email'); }
+  get password() { return this.loginForm.get('password'); }
+
 
 }

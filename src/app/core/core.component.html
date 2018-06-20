@@ -1,22 +1,35 @@
 <div class="container">
   <div class="jumbotron">
-    <h1>HTTP Interceptor Demo</h1>
+    <h1>Lazy Loading/Reactive Forms Demo</h1>
   </div>
   <div class="panel panel-primary">
     <div class="panel-heading">Login</div>
     <div class="panel-body">
-      <div class="form-group">
-        <input [(ngModel)]="id" type="text" id="name" class="form-control" [ngClass]="{'dangerClass': denied}" placeholder="ID">
-        <label></label>
-        <input [(ngModel)]="password" type="password" id="paw" class="form-control" [ngClass]="{'dangerClass': denied}" placeholder="Password">
-        <label></label>
-        <input type="submit" id="submit" class="form-control btn-danger" value="Submit" (click)="login()">
-        <label></label>
-        <input type="submit" id="submit" class="form-control btn-danger" value="Random Request" (click)="randGet()">
-      </div>
-      <div *ngIf="denied">
-        <span class="label label-danger">Incorrect ID/Password</span>
-      </div>
+      <form [formGroup]='loginForm' (ngSubmit)="login()">
+        <fieldset>
+          <legend>Enter Credentials</legend>
+
+          <div class="form-group">
+            <label for="inputEmail"></label>
+            <input type="text" class="form-control" id="inputEmail" formControlName="email" placeholder="Email" [ngClass]="{'dangerClass': denied}">
+            <div *ngIf="email.invalid && email.touched" class="col-sm-3 text-danger">
+              Email is invalid
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputPassword"></label>
+            <input type="password" class="form-control" id="inputPassword" formControlName="password" placeholder="Password" [ngClass]="{'dangerClass': denied}">
+            <div *ngIf="password.invalid && password.touched" class="col-sm-3 text-danger">
+              Password needs to be more than 5 characters
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" [disabled]="!loginForm.valid" class="form-control btn btn-danger">Submit</button>
+          </div>
+        </fieldset>
+      </form>
     </div>
   </div>
 </div>

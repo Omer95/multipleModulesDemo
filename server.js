@@ -39,7 +39,7 @@ app.post('/api/login', (req, res)=> {
     console.log(req.body)
     userId=req.body.id
     userPassword=req.body.password
-    if (userId==='omer' && userPassword==='farooq') {
+    if (userId==='omer@omer.com' && userPassword==='farooq') {
         var expires = moment().add(7, 'days').valueOf();
         var token = jwt.encode({
             iss: req.body.id,
