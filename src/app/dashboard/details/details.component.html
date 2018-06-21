@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="panel panel-success">
+    <div class="panel-heading">USER DETAILS</div>
+    <div class="panel-body">
+      <form [formGroup]="detailForm">
+        <fieldset>
+          <legend>Enter your details</legend>
+
+          <div class="form-group">
+            <label>CITY</label>
+            <ng-select class="form-control" [items]='cities' placeholder='select city' formControlName="selectedCity">
+
+            </ng-select>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

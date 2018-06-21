@@ -25,6 +25,7 @@
     "jwt-decode": "^2.2.0",
     "jwt-simple": "^0.5.1",
     "moment": "^2.22.2",
+    "ng-select": "^1.0.0-rc.5",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },

@@ -4,18 +4,21 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { HttpClientModule } from '@angular/common/http'; 
 import { DashboardComponent } from './dashboard.component';
 import { RouterModule } from '@angular/router';
+import { DetailsComponent } from './details/details.component'
+import { ReactiveFormsModule} from '@angular/forms';
 //import { CoreModule } from '../core/core.module';
 
 @NgModule({
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
     //CoreModule
   ],
   exports:[
     RouterModule
   ],
-  declarations: [DashboardComponent]
+  declarations: [DashboardComponent, DetailsComponent]
 })
 export class DashboardModule { }
