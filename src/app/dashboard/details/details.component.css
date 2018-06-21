@@ -10,4 +10,7 @@
 }
 body {
     padding: 20px;
-  }
+	}
+.select-danger {
+	background-color: indianred
+}
