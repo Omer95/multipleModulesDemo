@@ -6,6 +6,8 @@ import { DashboardComponent } from './dashboard.component';
 import { RouterModule } from '@angular/router';
 import { DetailsComponent } from './details/details.component'
 import { ReactiveFormsModule} from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
 //import { CoreModule } from '../core/core.module';
 
 @NgModule({
@@ -13,7 +15,9 @@ import { ReactiveFormsModule} from '@angular/forms';
     CommonModule,
     DashboardRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgSelectModule,
+    FormsModule
     //CoreModule
   ],
   exports:[

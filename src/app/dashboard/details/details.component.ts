@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,19 +9,23 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class DetailsComponent implements OnInit {
   detailForm: FormGroup
+  showCity
   cities = [
-    {id: 1, name: 'Vilnius'},
-    {id: 2, name: 'Kaunas'},
-    {id: 3, name: 'Pavilnys', disabled: true},
-    {id: 4, name: 'Pabradė'},
-    {id: 5, name: 'Klaipėda'}
+    {id: 1, name: 'Eskisehir'},
+    {id: 2, name: 'Sofia'},
+    {id: 3, name: 'Islamabad', disabled: true},
+    {id: 4, name: 'Lahore'},
+    {id: 5, name: 'Karachi'}
   ];
   constructor(private fb: FormBuilder) {
     this.detailForm=this.fb.group({
-      selectedCity: ['Select City']
+      selectedCity: ['', Validators.required]
     })
    }
 
+  getCity() {
+    this.showCity=this.detailForm.get('selectedCity').value.name
+  }
   ngOnInit() {
   }
 
