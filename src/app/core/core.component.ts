@@ -24,6 +24,7 @@ export class CoreComponent implements OnInit {
     this.enable=true;
     this.loginForm=event;
     console.log('emitted: '+event.get('email').value+' '+event.get('password').value)
+    this.login()
   }
 
   login() {

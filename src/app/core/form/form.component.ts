@@ -45,6 +45,8 @@ export class FormComponent implements OnInit, OnChanges {
     }
   }
 
+
+
   randGet() {
     if (this.id && this.pass) {
       this.authService.randGet();
