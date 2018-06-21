@@ -2,7 +2,7 @@
     <div class="panel panel-primary">
       <div class="panel-heading">Login</div>
       <div class="panel-body">
-        <form [formGroup]='loginForm' (ngSubmit)="login()">
+        <form [formGroup]='loginForm'>
           <fieldset>
             <legend>Enter Credentials</legend>
   
@@ -23,7 +23,7 @@
             </div>
   
             <div class="form-group">
-              <button type="submit" [disabled]="!loginForm.valid" class="form-control btn btn-danger">Submit</button>
+              <button type="submit" [disabled]="!loginForm.valid" class="form-control btn btn-danger" (click)="notifyParent()">Submit</button>
             </div>
           </fieldset>
         </form>

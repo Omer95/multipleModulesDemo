@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
@@ -11,8 +11,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormComponent implements OnInit, OnChanges {
   @Input() id: string;
   @Input() pass: string;
-  denied: string
-  inputColor: string 
+  @Input() denied: string
+  inputColor: string
+  @Output() eventOutput: EventEmitter<FormGroup> = new EventEmitter<FormGroup>() 
 
   constructor(private authService: AuthService, private router: Router, private fb: FormBuilder) {
     this.loginForm = this.fb.group({
@@ -22,6 +23,7 @@ export class FormComponent implements OnInit, OnChanges {
    }
 
   loginForm: FormGroup;
+
   login() {
     if (this.loginForm.valid) {
       this.id=this.loginForm.get('email').value;
@@ -49,9 +51,7 @@ export class FormComponent implements OnInit, OnChanges {
     }
   }
   
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
   ngOnChanges() {
     // this.loginForm.reset({
@@ -64,7 +64,11 @@ export class FormComponent implements OnInit, OnChanges {
    
     console.log(this.id)
   }
- 
+
+  notifyParent() {
+    console.log('notifying parent')
+    this.eventOutput.emit(this.loginForm)
+  }
 
   get email() { return this.loginForm.get('email'); }
   get password() { return this.loginForm.get('password'); }

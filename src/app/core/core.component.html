@@ -10,5 +10,6 @@
       </button>
     </div>
   </div>
-  <app-form [id]="prevId"></app-form>
+  <app-form [id]="prevId" [denied]="pDenied" (eventOutput)="onNotify($event)"></app-form>
+  <button class="btn btn-success" [disabled]="!enable" (click)="login()">Login</button>
 </div>
