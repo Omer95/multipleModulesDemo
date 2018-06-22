@@ -1,0 +1,87 @@
+<div class="container form-font">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-10">
+      <form [formGroup]="userForm">
+        <div class="form-group">
+          <h3 class="center"><b>Add New User</b></h3>
+        </div>
+        <br><br>
+        <div class="form-group">
+          <h4>Work Information</h4>
+        </div>
+        <div class="form-group">
+          <input type="text" id="address" placeholder="Select Address" formControlName="address">
+        </div>
+        <br>
+        <div class="form-group">
+          <input type="text" id="city" placeholder="City" formControlName="city">
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <ng-select [items]="states" bindLabel="name" placeholder="State" formControlName="state">
+              </ng-select>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <input type="text" id="zip" placeholder="Zipcode" formControlName="zip">
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <input type="text" id="workphone" placeholder="Work Phone Number" formControlName="phone"> 
+        </div>
+        <br>
+        <div class="form-group">
+          <h4>Roles & Teams</h4>
+        </div>
+        <br>
+        <div class="form-group">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-6">
+                <ng-select [items]="teamItems" bindLabel="name" placeholder="Select Team" formControlName="aTeam"></ng-select>
+              </div>
+              <div class="col-sm-6">
+                <ng-select [items]="roleItems" bindLabel="name" placeholder="Select Role" formControlName="aRole"></ng-select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div *ngFor="let role of roles; let i=index">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-6">
+                  <ng-select [items]="teamItems" bindLabel="name" placeholder="Select Team" formControlName="{{teams[i]}}"></ng-select>
+                </div>
+                <div class="col-sm-6">
+                  <ng-select [items]="roleItems" bindLabel="name" placeholder="Select Role" formControlName="{{roles[i]}}"></ng-select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <button class="btn btn-link" (click)="addMore()">+ Add More</button>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4">
+              <button type="button" (click)="cancel()" class="btn" style="float: right">Cancel</button>
+            </div>
+            <div class="col-sm-4">
+              <button type="button" [disabled]="userForm.invalid" class="btn btn-primary"(click)="submit()">Add New User</button>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>

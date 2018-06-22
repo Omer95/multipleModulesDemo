@@ -8,6 +8,7 @@ import { DetailsComponent } from './details/details.component'
 import { ReactiveFormsModule} from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
+import { UserFormComponent } from './user-form/user-form.component';
 //import { CoreModule } from '../core/core.module';
 
 @NgModule({
@@ -23,6 +24,6 @@ import { FormsModule } from '@angular/forms';
   exports:[
     RouterModule
   ],
-  declarations: [DashboardComponent, DetailsComponent]
+  declarations: [DashboardComponent, DetailsComponent, UserFormComponent]
 })
 export class DashboardModule { }
