@@ -57,10 +57,10 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-sm-6">
-                  <ng-select [items]="teamItems" bindLabel="name" placeholder="Select Team" formControlName="{{teams[i]}}"></ng-select>
+                  <ng-select [items]="teamItems" bindLabel="name" placeholder="Select Team" formControlName="{{teams[i]}}" (add)="teamSelector(i)"></ng-select>
                 </div>
                 <div class="col-sm-6">
-                  <ng-select [items]="roleItems" bindLabel="name" placeholder="Select Role" formControlName="{{roles[i]}}"></ng-select>
+                  <ng-select [items]="roleItems" bindLabel="name" placeholder="Select Role" formControlName="{{roles[i]}}" (open)="log()"></ng-select>
                 </div>
               </div>
             </div>

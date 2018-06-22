@@ -53,4 +53,11 @@ export class UserFormComponent implements OnInit {
     
   }
 
+  teamSelector(index) {
+    console.log(this.userForm.get(this.teams[index]).value)
+  }
+  log() {
+    console.log('roles dropdown opened')
+  }
+
 }
