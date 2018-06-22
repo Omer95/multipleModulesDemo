@@ -19,7 +19,7 @@ export class DetailsComponent implements OnInit {
   ];
   constructor(private fb: FormBuilder) {
     this.detailForm=this.fb.group({
-      selectedCity: ['', Validators.required]
+      selectedCity: [null, Validators.required]
     })
    }
 
