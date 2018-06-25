@@ -44,7 +44,7 @@
           <div class="form-group">
             <div class="row">
               <div class="col-sm-6">
-                <ng-select [items]="teamItems" bindLabel="name" placeholder="Select Team" formControlName="aTeam"></ng-select>
+                <ng-select [items]="teamItems" bindLabel="name" placeholder="Select Team" formControlName="aTeam" (blur)="teamSelector('aTeam')"></ng-select>
               </div>
               <div class="col-sm-6">
                 <ng-select [items]="roleItems" bindLabel="name" placeholder="Select Role" formControlName="aRole"></ng-select>
@@ -57,7 +57,7 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-sm-6">
-                  <ng-select [items]="teamItems" bindLabel="name" placeholder="Select Team" formControlName="{{teams[i]}}" (add)="teamSelector(i)"></ng-select>
+                  <ng-select [items]="teamItems" bindLabel="name" placeholder="Select Team" formControlName="{{teams[i]}}" (blur)="teamSelector(i)"></ng-select>
                 </div>
                 <div class="col-sm-6">
                   <ng-select [items]="roleItems" bindLabel="name" placeholder="Select Role" formControlName="{{roles[i]}}" (open)="log()"></ng-select>

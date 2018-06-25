@@ -38,12 +38,14 @@ export class UserFormComponent implements OnInit {
   }
 
   addMore() {
-    this.roles.push(''+this.roleNo)
-    this.userForm.addControl(this.roles[this.roleNo], new FormControl(null, Validators.required))
-    this.roleNo++
-    this.teams.push(''+this.teamNo)
-    this.userForm.addControl(this.teams[this.teamNo], new FormControl(null, Validators.required))
-    this.teamNo++
+    if (this.roleNo<4) {
+      this.roles.push(''+this.roleNo)
+      this.userForm.addControl(this.roles[this.roleNo], new FormControl(null, Validators.required))
+      this.roleNo++
+      this.teams.push(''+this.teamNo)
+      this.userForm.addControl(this.teams[this.teamNo], new FormControl(null, Validators.required))
+      this.teamNo++
+    }
 
   }
   submit() {
@@ -54,7 +56,12 @@ export class UserFormComponent implements OnInit {
   }
 
   teamSelector(index) {
-    console.log(this.userForm.get(this.teams[index]).value)
+    index=''+index
+    let result:string=this.userForm.get(index).value
+    console.log(result)
+    var location = this.teamItems.indexOf(result);
+    if (location !== -1) this.teamItems.splice(location, 1);
+    
   }
   log() {
     console.log('roles dropdown opened')
