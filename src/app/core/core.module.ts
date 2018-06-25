@@ -7,6 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { UserFormComponent } from '../dashboard/user-form/user-form.component';
+import { DashboardModule } from '../dashboard/dashboard.module';
+
 
 @NgModule({
   imports: [
@@ -14,7 +18,9 @@ import { FormComponent } from './form/form.component';
     CoreRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule.forRoot(),
+    DashboardModule
   ],
   exports: [
     RouterModule

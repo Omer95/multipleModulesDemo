@@ -9,6 +9,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 import { UserFormComponent } from './user-form/user-form.component';
+import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 //import { CoreModule } from '../core/core.module';
 
 @NgModule({
@@ -18,12 +19,15 @@ import { UserFormComponent } from './user-form/user-form.component';
     HttpClientModule,
     ReactiveFormsModule,
     NgSelectModule,
-    FormsModule
+    FormsModule,
+    NgbModule
     //CoreModule
   ],
   exports:[
     RouterModule
   ],
-  declarations: [DashboardComponent, DetailsComponent, UserFormComponent]
+  entryComponents: [UserFormComponent],
+  declarations: [DashboardComponent, DetailsComponent, UserFormComponent],
+  providers: [NgbActiveModal]
 })
 export class DashboardModule { }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../core/services/auth.service';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { UserFormComponent } from './user-form/user-form.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private auth: AuthService, private router: Router, private modalService: NgbModal) { }
 
   logout() {
     this.auth.logout();
@@ -20,6 +22,15 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+  open() {
+    const modalRef = this.modalService.open(UserFormComponent);
+  
+    modalRef.result.then((result) => {
+      console.log(result);
+    }).catch((error) => {
+      console.log(error);
+    });
   }
 
 }

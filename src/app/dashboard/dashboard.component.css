@@ -8,3 +8,7 @@
 	font-weight:700;
 	width: 100%
 }
+.modal-open .modal
+{
+  opacity: 1;
+}
