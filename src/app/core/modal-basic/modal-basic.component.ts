@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { FormComponent } from '../form/form.component';
+import { UserFormComponent } from '../../dashboard/user-form/user-form.component';
 
 @Component({
   selector: 'app-modal-basic',
@@ -11,8 +13,8 @@ export class ModalBasicComponent implements OnInit {
 
   constructor(private modalService: NgbModal) {}
 
-  open(content) {
-    this.modalService.open(content).result.then((result) => {
+  open() {
+    this.modalService.open(UserFormComponent).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;

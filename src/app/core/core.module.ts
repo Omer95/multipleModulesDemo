@@ -31,6 +31,7 @@ import { ModalBasicComponent } from './modal-basic/modal-basic.component';
     CoreComponent,
     FormComponent,
     ModalBasicComponent
-  ]
+  ],
+  entryComponents: [UserFormComponent]
 })
 export class CoreModule { }
