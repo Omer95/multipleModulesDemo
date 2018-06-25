@@ -10,6 +10,7 @@ import { FormComponent } from './form/form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserFormComponent } from '../dashboard/user-form/user-form.component';
 import { DashboardModule } from '../dashboard/dashboard.module';
+import { ModalBasicComponent } from './modal-basic/modal-basic.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { DashboardModule } from '../dashboard/dashboard.module';
   ],
   declarations: [
     CoreComponent,
-    FormComponent
+    FormComponent,
+    ModalBasicComponent
   ]
 })
 export class CoreModule { }
