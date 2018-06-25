@@ -15,7 +15,9 @@ import { UserFormComponent } from './dashboard/user-form/user-form.component';
     CoreModule,
     NgbModule.forRoot()
   ],
+  exports: [NgbModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [UserFormComponent]
 })
 export class AppModule { }

@@ -19,11 +19,12 @@ import { DashboardModule } from '../dashboard/dashboard.module';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule.forRoot(),
+    NgbModule,
     DashboardModule
   ],
   exports: [
-    RouterModule
+    RouterModule,
+    NgbModule
   ],
   declarations: [
     CoreComponent,

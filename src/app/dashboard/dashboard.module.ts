@@ -26,7 +26,6 @@ import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   exports:[
     RouterModule
   ],
-  entryComponents: [UserFormComponent],
   declarations: [DashboardComponent, DetailsComponent, UserFormComponent],
   providers: [NgbActiveModal]
 })
