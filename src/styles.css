@@ -3,4 +3,12 @@
 .modal-open .modal
 {
   opacity: 1;
+  align-items: stretch;
+  align-content: stretch;
+  display: flex
 }
+.modal-dialog {
+  align-content: center;
+  align-items: center
+}
+

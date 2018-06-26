@@ -14,6 +14,7 @@ export class ModalBasicComponent implements OnInit {
   constructor(private modalService: NgbModal) {}
 
   open() {
+    
     this.modalService.open(UserFormComponent).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {

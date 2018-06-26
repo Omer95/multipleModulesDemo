@@ -16,6 +16,7 @@ export class UserFormComponent implements OnInit, OnChanges {
   roleNo=0
   teamNo=0
   enabled=false
+  selected=false
 
   roleControls: FormControl[]=[]
   teamControls: FormControl[]=[]
@@ -72,7 +73,7 @@ export class UserFormComponent implements OnInit, OnChanges {
   }
   enableButton() {
     this.enabled=true
-    
+    this.selected=true
   }
   enableAddMore() {
     if (this.enabled) {
@@ -89,6 +90,19 @@ export class UserFormComponent implements OnInit, OnChanges {
   closeModal() {
     this.activeModal.close('Modal Closed');
   }
- 
+  itemSelected() {
+    if (this.userForm.get('aTeam').value===null) {
+      return false
+    }
+  }
+  clear() {
+    this.selected=false
+  }
+  limitReached() {
+    if (this.teamNo>=4) {
+      return false
+    }
+    return true
+  }
   
 }
