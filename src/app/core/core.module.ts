@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserFormComponent } from '../dashboard/user-form/user-form.component';
 import { DashboardModule } from '../dashboard/dashboard.module';
 import { ModalBasicComponent } from './modal-basic/modal-basic.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ModalBasicComponent } from './modal-basic/modal-basic.component';
     HttpClientModule,
     ReactiveFormsModule,
     NgbModule,
-    DashboardModule
+    DashboardModule,
+    InfiniteScrollModule
   ],
   exports: [
     RouterModule,

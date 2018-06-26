@@ -4,6 +4,7 @@ import { CoreModule } from './core/core.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { UserFormComponent } from './dashboard/user-form/user-form.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { UserFormComponent } from './dashboard/user-form/user-form.component';
   imports: [
     BrowserModule,
     CoreModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    InfiniteScrollModule
   ],
   exports: [NgbModule],
   providers: [],

@@ -4,12 +4,13 @@ import { Router, RouterModule, Routes } from '@angular/router'
 import { DashboardComponent } from './dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ScrollComponent } from './scroll/scroll.component';
+import { DashComponent } from './dash/dash.component';
 //import { CoreComponent } from '../core/core.component';
 
 const routes=[
   {
     path: '', component: DashboardComponent,
-    children: [{path: 'scroll', component: ScrollComponent}]
+    children: [{path: '', redirectTo: 'dash', pathMatch: 'full'}, {path: 'dash', component: DashComponent}, {path: 'scroll', component: ScrollComponent}]
   }
 
  
