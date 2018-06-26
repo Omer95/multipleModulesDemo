@@ -3,10 +3,15 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule, Routes } from '@angular/router'
 import { DashboardComponent } from './dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ScrollComponent } from './scroll/scroll.component';
 //import { CoreComponent } from '../core/core.component';
 
 const routes=[
-  {path: '', component: DashboardComponent}
+  {
+    path: '', component: DashboardComponent,
+    children: [{path: 'scroll', component: ScrollComponent}]
+  }
+
  
 ]
 

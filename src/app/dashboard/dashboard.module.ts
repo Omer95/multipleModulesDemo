@@ -10,6 +10,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 import { UserFormComponent } from './user-form/user-form.component';
 import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { ScrollComponent } from './scroll/scroll.component';
 //import { CoreModule } from '../core/core.module';
 
 @NgModule({
@@ -26,7 +27,7 @@ import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   exports:[
     RouterModule
   ],
-  declarations: [DashboardComponent, DetailsComponent, UserFormComponent],
+  declarations: [DashboardComponent, DetailsComponent, UserFormComponent, ScrollComponent],
   providers: [NgbActiveModal]
 })
 export class DashboardModule { }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../core/services/auth.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserFormComponent } from './user-form/user-form.component';
 
@@ -11,7 +11,7 @@ import { UserFormComponent } from './user-form/user-form.component';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private auth: AuthService, private router: Router, private modalService: NgbModal) { }
+  constructor(private auth: AuthService, private router: Router, private modalService: NgbModal, private route: ActivatedRoute) { }
 
   logout() {
     this.auth.logout();
@@ -31,6 +31,9 @@ export class DashboardComponent implements OnInit {
     }).catch((error) => {
       console.log(error);
     });
+  }
+  openScroll() {
+    this.router.navigate(['dashboard/scroll'])
   }
 
 }
