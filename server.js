@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json())
 const cors = require('cors');
 var corsOptions = {
-    origin: 'http://localhost:4200',
+    origin: 'http://172.16.1.72:4200',
     optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions))
@@ -56,6 +56,6 @@ app.post('/api/login', (req, res)=> {
 })
 
 const PORT = 8000
-app.listen(PORT, ()=> {
+app.listen(PORT, '0.0.0.0', ()=> {
     console.log('server listenening on port ', PORT);
 });
