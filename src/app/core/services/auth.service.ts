@@ -13,7 +13,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(id:string, password:string) {
-    return this.http.post('http://172.16.1.72:8000/api/login', {id, password}).pipe(
+    return this.http.post('/api/login', {id, password}).pipe(
       tap(res=> {
         console.log('received response for post request')
         this.setSession(res)
@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   randGet() {
-    return this.http.get('http://172.16.1.72:8000/api/random').subscribe(res=>console.log(res))
+    return this.http.get('/api/random').subscribe(res=>console.log(res))
   }
 
   private setSession(authResult) {
