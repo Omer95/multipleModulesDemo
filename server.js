@@ -4,10 +4,11 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json())
 const cors = require('cors');
 var corsOptions = {
-    origin: 'http://0.0.0.0:0',
+    origin: 'http://172.16.1.72:4200',
     optionsSuccessStatus: 200
 }
-app.use(cors(corsOptions))
+
+//app.use(cors(corsOptions))
 const jwt = require('jwt-simple')
 app.set('jwtTokenSecret', 'SECRET_STRING')
 const moment = require('moment');
