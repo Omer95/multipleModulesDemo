@@ -24,7 +24,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     NgSelectModule,
     FormsModule,
     NgbModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
     //CoreModule
   ],
   exports:[
