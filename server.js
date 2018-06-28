@@ -7,6 +7,7 @@ var corsOptions = {
     origin: 'http://172.16.1.72:4200',
     optionsSuccessStatus: 200
 }
+
 //app.use(cors(corsOptions))
 const jwt = require('jwt-simple')
 app.set('jwtTokenSecret', 'SECRET_STRING')
