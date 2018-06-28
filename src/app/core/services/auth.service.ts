@@ -13,7 +13,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(id:string, password:string) {
-    return this.http.post('/api/login', {id, password}).pipe(
+    return this.http.post('http://18.206.12.196:8000/api/login', {id, password}).pipe(
       tap(res=> {
         console.log('received response for post request')
         this.setSession(res)
