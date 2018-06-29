@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DragulaService } from 'ng2-dragula';
 
+
 @Component({
   selector: 'app-dnd',
   templateUrl: './dnd.component.html',
@@ -15,6 +16,7 @@ export class DndComponent implements OnInit {
 
   constructor(private dragula: DragulaService) { 
     dragula.drag.subscribe((value)=> {
+      console.log("dragged")
       console.log(`drag: ${value[0]}`);
     })
   }
@@ -22,8 +24,6 @@ export class DndComponent implements OnInit {
   ngOnInit() {
   }
   clicked() {
-    this.dragula.drag.subscribe((value)=> {
-      console.log(`drag: ${value[0]}`);
-    })
+    
   }
 }

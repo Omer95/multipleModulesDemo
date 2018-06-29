@@ -35,6 +35,14 @@ export class AuthService {
     console.log(JSON.parse(localStorage.getItem('expires_at')));
   }
 
+  textGet() {
+    return this.http.get('/api/text').pipe(
+      tap(res=> {
+        console.log('received text');
+      })
+    );
+  }
+
   logout() {
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');

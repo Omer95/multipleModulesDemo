@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, Inject } from '@angular/core';
+import { AuthService } from '../../core/services/auth.service';
+
 
 declare var Chance: any
 
@@ -9,22 +11,26 @@ declare var Chance: any
 })
 export class ScrollComponent implements OnInit { 
 
-
+  callback=true
   array = [];
   sum = 100;
+  i=0
   
   modalIsOpen = '';
   modalTitle = 'scroll to update';
-  modalBody = modalText;
+  modalBody = modalText
   
   modalScrollDistance = 2;
   modalScrollThrottle = 50;
 
-  constructor() {
+  constructor( private auth: AuthService, private renderer: Renderer2) {
     for (let i = 0; i < this.sum; ++i) {
       this.array.push(i);
     }
     this.open()
+    this.renderer.listen('window', 'scroll', (event)=> {
+      //console.log('there was scrolling')
+    })
   }
 
   onScrollDown () {
@@ -37,11 +43,27 @@ export class ScrollComponent implements OnInit {
       this.array.push(i);
     }
   }
+  onModalScrollUp() {
+    this.onModalScrollDown();
+  }
+
   
   onModalScrollDown () {
-    console.log("scrolling down")
+    console.log("scrolling down "+this.i)
+    this.i++
+    //get more data from server
+    this.auth.textGet().subscribe(res=> {
+      this.modalBody+=JSON.stringify(res).valueOf();
+    }, (err)=> {
+      if (err) {
+        console.log('error')
+        //this.onModalScrollDown()
+        //this.renderer.setAttribute("container", "scrollTop", "0")
+        window.scrollTo(0,0)
+      }
+    })
     this.modalTitle = 'updated on ' + (new Date()).toString();
-    this.modalBody += modalText;
+    //this.modalBody += modalText;
   }
   open () {
     this.modalIsOpen = 'in modal-open';
