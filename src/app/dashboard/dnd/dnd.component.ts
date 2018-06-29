@@ -7,6 +7,8 @@ import { DragulaService } from 'ng2-dragula';
   styleUrls: ['./dnd.component.css']
 })
 export class DndComponent implements OnInit {
+  list1=["python", "java", "c", "fortran"]
+  list2=["omer", "usman", "hamza", "marium"]
   options: any={
     removeOnSpill: true
   }
