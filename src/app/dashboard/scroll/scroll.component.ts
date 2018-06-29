@@ -39,6 +39,7 @@ export class ScrollComponent implements OnInit {
   }
   
   onModalScrollDown () {
+    console.log("scrolling down")
     this.modalTitle = 'updated on ' + (new Date()).toString();
     this.modalBody += modalText;
   }

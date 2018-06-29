@@ -1,10 +1,10 @@
 <div>
   <div class='wrapper'>
     <div class='container' [dragula]='"first-bag"' [dragulaOptions]="options" [dragulaModel]="list1">
-      <div *ngFor="let item of list1">{{item}}</div>
+      <div *ngFor="let item of list1" (click)="clicked()">{{item}}</div>
     </div>
     <div class='container' [dragula]='"first-bag"' [dragulaOptions]="options" [dragulaModel]="list2">
-      <div *ngFor="let item of list2">{{item}}</div>
+      <div *ngFor="let item of list2" (click)="clicked()">{{item}}</div>
     </div>
   </div>
 </div>

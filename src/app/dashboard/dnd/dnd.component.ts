@@ -14,10 +14,16 @@ export class DndComponent implements OnInit {
   }
 
   constructor(private dragula: DragulaService) { 
-    
+    dragula.drag.subscribe((value)=> {
+      console.log(`drag: ${value[0]}`);
+    })
   }
 
   ngOnInit() {
   }
-
+  clicked() {
+    this.dragula.drag.subscribe((value)=> {
+      console.log(`drag: ${value[0]}`);
+    })
+  }
 }
