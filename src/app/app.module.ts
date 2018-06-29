@@ -15,7 +15,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     BrowserModule,
     CoreModule,
     NgbModule.forRoot(),
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    
   ],
   exports: [NgbModule],
   providers: [],

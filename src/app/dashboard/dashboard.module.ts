@@ -13,6 +13,8 @@ import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ScrollComponent } from './scroll/scroll.component';
 import { DashComponent } from './dash/dash.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { DragulaModule } from 'ng2-dragula';
+import { DndComponent } from './dnd/dnd.component';
 //import { CoreModule } from '../core/core.module';
 
 @NgModule({
@@ -25,12 +27,13 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     FormsModule,
     NgbModule,
     InfiniteScrollModule,
+    DragulaModule
     //CoreModule
   ],
   exports:[
     RouterModule
   ],
-  declarations: [DashboardComponent, DetailsComponent, UserFormComponent, ScrollComponent, DashComponent],
+  declarations: [DashboardComponent, DetailsComponent, UserFormComponent, ScrollComponent, DashComponent, DndComponent],
   providers: [NgbActiveModal]
 })
 export class DashboardModule { }

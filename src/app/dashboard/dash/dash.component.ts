@@ -35,5 +35,8 @@ export class DashComponent implements OnInit {
   openScroll() {
     this.router.navigate(['dashboard/scroll'])
   }
+  openDnd() {
+    this.router.navigate(["dnd"]);
+  }
 
 }
