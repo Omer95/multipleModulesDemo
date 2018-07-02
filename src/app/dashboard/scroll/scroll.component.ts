@@ -49,14 +49,14 @@ export class ScrollComponent implements OnInit {
 
   
   onModalScrollDown () {
-    console.log("scrolling down "+this.i)
-    this.i++
+    console.log("scrolling down")
+
     //get more data from server
     this.auth.textGet().subscribe(res=> {
       this.modalBody+=JSON.stringify(res).valueOf();
     }, (err)=> {
       if (err) {
-        console.log('error')
+        console.log('request to server failed')
         //this.onModalScrollDown()
         //this.renderer.setAttribute("container", "scrollTop", "0")
         window.scrollTo(0,0)
