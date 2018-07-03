@@ -38,5 +38,8 @@ export class DashComponent implements OnInit {
   openDnd() {
     this.router.navigate(["dnd"]);
   }
+  openDropFiles() {
+    this.router.navigate(['dropfiles'])
+  }
 
 }

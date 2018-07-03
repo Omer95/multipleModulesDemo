@@ -6,18 +6,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { ScrollComponent } from './scroll/scroll.component';
 import { DashComponent } from './dash/dash.component';
 import { DndComponent } from './dnd/dnd.component';
+import { DropFileComponent } from './drop-file/drop-file.component';
 //import { CoreComponent } from '../core/core.component';
 
 const routes=[
   {
     path: '', component: DashboardComponent,
-    children: [{path: '', redirectTo: 'dash', pathMatch: 'full'},
+    children: [
+              {path: '', redirectTo: 'dash', pathMatch: 'full'},
               {path: 'dash', component: DashComponent},
               {path: 'scroll', component: ScrollComponent},
-              {path: 'dnd', component: DndComponent}]
+              {path: 'dnd', component: DndComponent},
+              {path: 'dropfiles', component: DropFileComponent}
+            ]
   }
-
- 
 ]
 
 @NgModule({

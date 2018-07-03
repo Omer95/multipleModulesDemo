@@ -15,6 +15,8 @@ import { DashComponent } from './dash/dash.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { DragulaModule } from 'ng2-dragula';
 import { DndComponent } from './dnd/dnd.component';
+import { DropFileComponent } from './drop-file/drop-file.component';
+import { FileDropModule } from 'ngx-file-drop';
 //import { CoreModule } from '../core/core.module';
 
 @NgModule({
@@ -27,13 +29,14 @@ import { DndComponent } from './dnd/dnd.component';
     FormsModule,
     NgbModule,
     InfiniteScrollModule,
-    DragulaModule
+    DragulaModule,
+    FileDropModule
     //CoreModule
   ],
   exports:[
     RouterModule
   ],
-  declarations: [DashboardComponent, DetailsComponent, UserFormComponent, ScrollComponent, DashComponent, DndComponent],
+  declarations: [DashboardComponent, DetailsComponent, UserFormComponent, ScrollComponent, DashComponent, DndComponent, DropFileComponent],
   providers: [NgbActiveModal]
 })
 export class DashboardModule { }
